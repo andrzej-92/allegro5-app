@@ -1,0 +1,14 @@
+
+#ifndef ALLEGRO_HELLO_WORLD_ABSTRACTGRAPHICDRIVER_H
+#define ALLEGRO_HELLO_WORLD_ABSTRACTGRAPHICDRIVER_H
+
+
+class AbstractGraphicDriver {
+
+public:
+
+    virtual void drawRectangle();
+};
+
+
+#endif //ALLEGRO_HELLO_WORLD_ABSTRACTGRAPHICDRIVER_H

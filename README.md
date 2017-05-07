@@ -1,0 +1,1 @@
+# Few simple apps for Allegro 5 C/C++ library
