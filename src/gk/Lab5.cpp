@@ -1,7 +1,7 @@
 #include "AllegroGraphicDriver.cpp"
 
 /**
- * Rysuje Kota i pozwala na jego transforacje
+ * Rysuje Kota i pozwala na jego transformacje
  *
  * W lewo: Q
  * W prawo E
@@ -20,51 +20,7 @@ class Lab5 : public AllegroGraphicDriver {
 
 public:
 
-    void run() {
-        bool spoken = false;
-        setInitialState();
-
-        while (true) {
-            spoken = !spoken;
-            clearScreen();
-
-            drawAwesomeCat(centerX(), centerY(), spoken);
-            render();
-            waitForKeypress();
-
-            if (isKeyPreset(ALLEGRO_KEY_Q)) {
-                offset -= 10;
-            }
-
-            if (isKeyPreset(ALLEGRO_KEY_E)) {
-                offset += 10;
-            }
-
-            if (isKeyPreset(ALLEGRO_KEY_A)) {
-                scale -= .1;
-            }
-
-            if (isKeyPreset(ALLEGRO_KEY_D)) {
-                scale += .1;
-            }
-
-            if (isKeyPreset(ALLEGRO_KEY_Z)) {
-                decreaseRotate();
-            }
-
-            if (isKeyPreset(ALLEGRO_KEY_C)) {
-                increaseRotate();
-            }
-
-            if (isKeyPreset(ALLEGRO_KEY_X)) {
-                setInitialState();
-            }
-
-            if (isKeyPreset(ALLEGRO_KEY_ESCAPE)) {
-                break;
-            }
-        }
-    }
+    void run();
 
 private:
 
@@ -109,6 +65,52 @@ private:
     }
 
 };
+
+void Lab5::run() {
+    bool spoken = false;
+    setInitialState();
+
+    while (true) {
+        spoken = !spoken;
+        clearScreen();
+
+        drawAwesomeCat(centerX(), centerY(), spoken);
+        render();
+        waitForKeypress();
+
+        if (isKeyPreset(ALLEGRO_KEY_Q)) {
+            offset -= 10;
+        }
+
+        if (isKeyPreset(ALLEGRO_KEY_E)) {
+            offset += 10;
+        }
+
+        if (isKeyPreset(ALLEGRO_KEY_A)) {
+            scale -= .1;
+        }
+
+        if (isKeyPreset(ALLEGRO_KEY_D)) {
+            scale += .1;
+        }
+
+        if (isKeyPreset(ALLEGRO_KEY_Z)) {
+            decreaseRotate();
+        }
+
+        if (isKeyPreset(ALLEGRO_KEY_C)) {
+            increaseRotate();
+        }
+
+        if (isKeyPreset(ALLEGRO_KEY_X)) {
+            setInitialState();
+        }
+
+        if (isKeyPreset(ALLEGRO_KEY_ESCAPE)) {
+            break;
+        }
+    }
+}
 
 void Lab5::drawAwesomeCat(float x, float y, bool speaking) {
 
